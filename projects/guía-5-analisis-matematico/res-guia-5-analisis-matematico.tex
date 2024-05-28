@@ -1,0 +1,42 @@
+\documentclass[]{article}
+\setlength{\parindent}{0pt}
+%Preambulo
+\title{Guía 5 resoluciiones}
+\author{Ian Chen}
+\makeindex
+
+\begin{document}
+\maketitle
+Documento hecho con \LaTeX.
+
+%Primera sección
+\section{Reglas de derivación}
+\subsection{Ejercicio 6}
+Hallar derivadas de funciones con reglas de derivación.\\[6pt]
+
+a) $f(x)=x^3+x^2+\sin x$
+$$f'(x)=3x^2+2x+\cos x$$
+
+b) $f(x)=x^2 \cos x$
+$$f'(x)=\frac{d}{dx}\left(x^2 \cos x \right)=\frac{d}{dx}\left(x^2 \right)\cos x + \frac{d}{dx}\left(\cos x\right)x^2=2x \cos x - x^2 \sin x$$
+
+c) $f(x)=3\sin x$
+$$f'(x)=\frac{d}{dx}\left(3\sin x\right)=3\frac{d}{dx}\left(\sin x\right)= 3\cos x$$
+
+d) $f(x)=x \ln x$
+$$f'(x)= \frac{d}{dx}\left(x \ln x\right) = \frac{d}{dx}\left(x\right)\ln x + \frac{d}{dx}\left(\ln x\right)x= \ln x + 1$$
+
+e) $f(x)$
+
+\subsection{Ejercicio 8}
+Calcular derivada de la función siendo $f(x)$ en su dominio de definición.
+
+a) $f(x)=x^x$, $Dom=[0, \infty+)$, $x=e^{\ln x}$
+$$f'(x)=\frac{d}{dx}\left(x^x\right) = \frac{d}{dx}\left(e^{\ln(x^x)}\right)=\frac{d}{dx}\left(e^{x\ln x}\right)=\frac{d}{dg}\left(e^{g}\right)\frac{d}{dx}\left(x\ln x\right)$$
+$$= e^g ( 1 + \ln x) = x^x(1+\ln x) = x^x + x^x\ln x$$ 
+
+b) $f(x)=x^{3x}$
+$$f'(x)=(x^{3x})'=(e^{\ln(x^{3x})})'=(e^{3x\ln(x)})'$$
+$$(e^{3x\ln(x)})'(3x\ln(x))'=3e^{3x\ln(x)}(x\ln(x))'=3x^{3x}+3x^3x\ln$$
+
+\end{document}
