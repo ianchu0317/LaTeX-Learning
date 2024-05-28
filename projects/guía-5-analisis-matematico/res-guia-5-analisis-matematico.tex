@@ -1,13 +1,22 @@
-\documentclass[]{article}
+%packages
+\documentclass[18pt, a4paper]{article}
+
+%settings
 \setlength{\parindent}{0pt}
+
 %Preambulo
-\title{Guía 5 resoluciiones}
+\title{Guía 5 resoluciones}
 \author{Ian Chen}
 \makeindex
 
 \begin{document}
 \maketitle
-Documento hecho con \LaTeX.
+
+\begin{abstract}
+Principal objetivo del documento es el aprendizaje del \LaTeX. Se suponía que iba a poner todas las resoluciones paso a paso pero se me hizo muy difícil y muy largo así que solo pongo las respuestas ahora. 
+\end{abstract}
+
+
 
 %Primera sección
 \section{Reglas de derivación}
@@ -26,7 +35,85 @@ $$f'(x)=\frac{d}{dx}\left(3\sin x\right)=3\frac{d}{dx}\left(\sin x\right)= 3\cos
 d) $f(x)=x \ln x$
 $$f'(x)= \frac{d}{dx}\left(x \ln x\right) = \frac{d}{dx}\left(x\right)\ln x + \frac{d}{dx}\left(\ln x\right)x= \ln x + 1$$
 
-e) $f(x)$
+e) $f(x)=x^5+\frac{1}{x}\rightarrow f'(x)=\frac{5x^6-1}{x^2}$
+
+f) $f(x)=e^x+\ln x \rightarrow  f'(x)=e^x+\frac{1}{x}$
+
+g) $f(x)=x\sin x + e^x\cos x \rightarrow f'(x)=\sin x + x\cos x + e^x\cos x - e^x\sin x$
+
+h) $f(x)=\frac{\sin x}{x} → f'(x)=\frac{\cos x - \sin x}{x}$
+
+i) $$f'(x)=\frac{\cos^2x-\sin^2x}{\cos^2x}=\frac{1}{\cos^2x}$$
+
+j) $$f'(x)=\left(3x^2+4x+1\right)\ln x + \frac{1}{x}\left(x^3+x+2x^2+2\right)$$
+
+k) $$f'(x)=\frac{\left(\ln x + 1\right)\left(x^2 + 1\right) - 2x^2\ln x}{\left(x^2+1\right)^2}$$
+
+l) $$f'(x)= \frac{1}{x\ln a}$$
+
+m) $$f'(x)= -\frac{1}{x^2} - \frac{4}{x^3}-\frac{1,5}{\sqrt[3]{x^2}}$$
+
+n) $$f'(x)=1+\frac{\left(\sin x - \cos x\right)^2}{\left(\sin x + \cos x \right)^2}$$
+
+ñ) $$f'(x)=\frac{\ln x}{\sqrt[3]{x^2}}+\frac{\sqrt[3]{x}}{x}$$
+
+o) $$f'(x)=\frac{\log_a x}{x} + \frac{\ln x}{x \ln a} - \frac{1}{x}$$
+
+p) $$f'(x)=\sinh = \frac{e^x-e^{-x}}{2}$$
+
+q) $$f'(x)=\cosh = \frac{e^x+e^{-x}}{2}$$
+
+\subsection{Ejercicio 7}
+Calcular derivadas usando regla de cadena $(f(g(x)))'=g'(x)f'(g(x))$
+
+a) $$f'(x)=2x+2$$
+
+b) $$ f'(x)=3\left(1+x\right)^2$$
+
+c) $$f'(x)= 2001\left(1+x\right)^{2000}$$
+
+d) $$f'(x)=e^{x+3}$$
+
+e) $$f'(x)=-3\left(1-x\right)^2$$
+
+f) $$f'(x)=-3\sin (3x)$$
+
+g) $$f'(x)= -\frac{15x^4}{\cos^2(-3x^5)}$$
+
+h) $$f'(x)= 12\sin^3x\cos x$$
+
+i) $$f'(x)=\frac{1}{x+1}$$
+
+j) $$f'(x)=\frac{\cos x}{2+ \sin x}$$
+
+k) $$f'(x)=2e^{\sin x}\cos x$$
+
+l) $$f'(x)=\frac{4x\ln (x^2+1)}{x^2+1}$$
+
+m) $$f'(x)=\frac{6\sin x}{(3\cos^2)^2} - \frac{\sin x}{\cos^2 x}$$
+
+n) $$f'(x)= \frac{2xa^2}{(a^2-x^2)^2}$$
+
+ñ) $$f'(x)= \cos x \left(3^{\sin x}\ln x + 2\sin x\right)$$
+
+o) $$f'(x)=\frac{\tan (x) · \sec^2(x)}{\sqrt[3]{1+\tan^2 (x)}}$$
+
+p) $$f'(x)=\frac{bx}{\sqrt{a+bx^2}}$$
+
+q) $$f'(x)= 0 $$
+
+r) $$f'(x)=\frac{2(2x^3+3)\ln (x^2+1) - \frac{(2x)\left(2x^3+3\right)^2}{x^2+1}}{\ln^2(x^2+1)}$$
+
+s) $$f'(x)=0 $$
+
+t) $$f'(x)=0$$
+
+u) $$f'(x)=\frac{2x^3}{(x^4+1)\sqrt{\ln (x^4+1)}}$$
+
+v) $$f'(x)= \frac{\sin \left(\frac{x}{2}\right)}{2} - \frac{\sin x}{4\sqrt{\frac{1+\cos x}{2}}}$$
+
+w) $$f'(x)=\frac{x}{x^2+1}$$
+
 
 \subsection{Ejercicio 8}
 Calcular derivada de la función siendo $f(x)$ en su dominio de definición.
@@ -35,8 +122,14 @@ a) $f(x)=x^x$, $Dom=[0, \infty+)$, $x=e^{\ln x}$
 $$f'(x)=\frac{d}{dx}\left(x^x\right) = \frac{d}{dx}\left(e^{\ln(x^x)}\right)=\frac{d}{dx}\left(e^{x\ln x}\right)=\frac{d}{dg}\left(e^{g}\right)\frac{d}{dx}\left(x\ln x\right)$$
 $$= e^g ( 1 + \ln x) = x^x(1+\ln x) = x^x + x^x\ln x$$ 
 
-b) $f(x)=x^{3x}$
-$$f'(x)=(x^{3x})'=(e^{\ln(x^{3x})})'=(e^{3x\ln(x)})'$$
-$$(e^{3x\ln(x)})'(3x\ln(x))'=3e^{3x\ln(x)}(x\ln(x))'=3x^{3x}+3x^3x\ln$$
+b) $$f'(x)= 3x^{3x} + 3x^x\ln x + a^x\ln a$$
+
+c) $$f'(x)=3\sin^{3\ln x}(x)\left(\frac{\cos x \ln x}{\sin x} + \frac{\ln (\sin x)}{x}\right)$$
+
+d) $$f'(x)=\frac{x^{\sqrt{x}}\ln x +  2x^{\sqrt{x}}}{2\sqrt{x}}$$
+
+e) $$f'(x)=\frac{\left(1+\sin x \right)^{\cos x}\cos^2x}{1+\sin x} - \left(1+\sin x \right)^{\cos x}\sin x \ln (1+\sin x)$$
+
+f) $$f'(x)=\left(1+\frac{1}{x}\right)^x \ln \left(1 + \frac{1}{x}\right) - \frac{\left(1+\frac{1}{x}\right)^x}{x+1}$$
 
 \end{document}
