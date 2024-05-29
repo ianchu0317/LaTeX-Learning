@@ -1,0 +1,80 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{fullpage} % Ajustar margen del archivo a 1in
+\usepackage{graphicx} % Required for inserting images
+
+% Título del documento
+\title{Resumen indeterminaciones límites}
+\author{Ian Chen}
+\date{May 2024}
+
+
+% Inicio documento
+\begin{document}
+% Título
+\maketitle
+\begin{abstract}
+Resumen de las distintas indeterminaciones que existen y surgen durante  el análisis de funciones cuando se utiliza límites.
+\end{abstract}
+\vspace{1cm}
+\tableofcontents
+\newpage
+
+%Introducción del documento
+\section{Introduction}
+\subsection{¿Qué es una indeterminación?}
+En el cálculo, una indeterminación ocurre cuando intentamos evaluar un límite y obtenemos una forma que no nos permite determinar directamente el valor del límite. Estas formas indeterminadas se presentan comúnmente como resultados de ciertas operaciones algebraicas y funciones que, sin un análisis más detallado, no nos dan información suficiente para determinar el límite.
+
+\subsection{Tipos de indeterminaciones}
+\begin{enumerate}
+    \item \textbf{$\displaystyle \frac{0}{0}$}: Ocurre cuando tanto el numerador como el denominador tienden a cero.
+    \item $\displaystyle \frac{\infty}{\infty}$ Ocurre cuando tanto el numerador como el denominador tienden a infinito.
+    \item $\displaystyle 0 \cdot \infty$: Ocurre cuando un factor tiende a cero y el otro tiende a infinito.
+    \item $\displaystyle \infty - \infty$: Ocurre cuando dos cantidades que tienden a infinito se restan.
+    \item $\displaystyle 0^0$: Ocurre cuando una base que tiende a cero se eleva a una potencia que también tiende a cero.
+    \item $\displaystyle \infty^0$: Ocurre cuando una base que tiende a infinito se eleva a una potencia que tiende a cero.
+    \item $\displaystyle 1^\infty$: Ocurre cuando una base que tiende a uno se eleva a una potencia que tiende a infinito.
+\end{enumerate}
+Para resolver estas indeterminaciones, a menudo utilizamos técnicas adicionales, tales como:
+
+\begin{itemize}
+    \item \textbf{Factorización y simplificación}: Simplificar las expresiones algebraicas para eliminar la indeterminación.
+    \item \textbf{Racionalización}: Multiplicar por una forma conjugada para simplificar la expresión.
+    \item \textbf{Regla de L'Hôpital}: Usar derivadas para evaluar límites que tienen la forma indeterminada $\displaystyle \frac{0}{0} $ o $\displaystyle \frac{\infty}{\infty}$.
+    \item \textbf{Series de Taylor}: Expansiones en series para aproximar funciones y resolver indeterminaciones.
+    \item \textbf{Cambios de variable}: Introducir nuevas variables para reescribir el límite de una manera más manejable.
+\end{itemize}
+
+% Indeterminacion 1
+\section{Indeterminación $\displaystyle \frac{0}{0}$}
+Para este tipo de indeterminación se puede utilizar la factorización o la racionalización para despejar la indeterminación.\\[6pt]
+Ejemplos:
+
+\vspace{0.5cm}
+a) Método de factorización
+
+b) Método de racionalización
+
+c) L'Hopital
+
+
+% Indeterminación 2
+\section{Indeterminación $\displaystyle \frac{\infty}{\infty}$}
+Para este tipo de indeterminación se puede dividir por polinomio del mayor grado presente, o simplemente factorizar ambos numerador y el denominador.\\[6pt]
+Ejemplos:
+
+\vspace{0.5cm}
+a) Factorización
+
+b) L'Hopital
+
+\section{Indeterminación $\displaystyle 0 \cdot \infty$}
+
+
+\section{Indeterminación $\displaystyle \infty - \infty$}
+\section{Indeterminación $\displaystyle 0^0$}
+\section{Indetermianacióm $\displaystyle \infty^0$}
+\section{Indeterminación $\displaystyle 1^\infty$} 
+
+
+
+\end{document}
