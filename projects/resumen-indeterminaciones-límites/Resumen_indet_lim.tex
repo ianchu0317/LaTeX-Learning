@@ -44,18 +44,50 @@ Para resolver estas indeterminaciones, a menudo utilizamos técnicas adicionales
     \item \textbf{Cambios de variable}: Introducir nuevas variables para reescribir el límite de una manera más manejable.
 \end{itemize}
 
+(ESTE PARRAFO NO ES CHATGPT)
+Las transformaciones de las funciones sólo es aplicable para el estudio de límites y no su evaluación. O sea, en funciones reales (cuando queremos operar $f(2)=\frac{0}{0}$ por ejemplo) no es posible operar con transformaciones porque se dan valores exactos. Durante el estudio del límite se estudia una tendencia (ex. $\lim_{x\to2}f(x)=\frac{0}{0}$), por lo cual se estudian todos los valores cercanos al número estudiado pero nunca el número en sí. Por eso se puede trabajar con transformaciones de las funciones dentro de ese ámbito. 
+
 % Indeterminacion 1
 \section{Indeterminación $\displaystyle \frac{0}{0}$}
 Para este tipo de indeterminación se puede utilizar la factorización o la racionalización para despejar la indeterminación.\\[6pt]
-Ejemplos:
+\textbf{Ejemplos}:
 
 \vspace{0.5cm}
-a) Método de factorización
+\begin{enumerate}
+% factorización 0/0
+\item Método de factorización
+\begin{eqnarray}
+&\lim_{x\to3}&\left(\frac{x^2-2x-3}{4x-12}\right)\\
+&\lim_{x\to3}&\left(\frac{(x-3)(x+1)}{4\left(x-3\right)}\right)\\
+&\lim_{x\to3}&\left(\frac{x+1}{4}\right) = 1
+\end{eqnarray}
+Se factoriza tanto numerador como denominador y simplificar términos en común para llegar a una expresión más fácil de operar.
 
-b) Método de racionalización
+\setcounter{equation}{0}
+\vspace{1cm}
 
-c) L'Hopital
+% racionalizacion 0/0
+\item Método de racionalización
+\begin{eqnarray}
+    &\lim_{x\to0}&\left(\frac{\sqrt{1-x}-\sqrt{1+x}}{x}\right)\\
+    &\lim_{x\to0}&\left(\frac{\sqrt{1-x}-\sqrt{1+x}}{x} \cdot \frac{\sqrt{1-x}+\sqrt{1+x}}{\sqrt{1-x}+\sqrt{1+x}}\right)\\
+    &\lim_{x\to0}&\left(\frac{(1-x)-(1+x)}{x\left(\sqrt{1-x}+\sqrt{1+x}\right)}\right)\\
+    &\lim_{x\to0}&\left(\frac{-2x}{x\left(\sqrt{1-x}+\sqrt{1+x}\right)}\right)\\
+    &\lim_{x\to0}&\left(\frac{-2}{\sqrt{1-x}+\sqrt{1+x}}\right) = -1
+\end{eqnarray}
+Parte del problema son las raíces del dividendo, por lo cual se multiplica y divide por el conjugado para hallar mejor expresión y salvar el límite.
 
+\setcounter{equation}{0}
+
+%L'Hopital
+\item L'Hopital\\[6pt]
+El límite del cociente entre la derivada del numerador y la derivada del denominador es equivalente al límite del cociente entre el numerador y el denominador. $\displaystyle \lim_{x\to\alpha}\frac{f(x)}{g(x)}=\lim_{x\to\alpha}\frac{f'(x)}{g'(x)}$
+\begin{eqnarray}
+&\lim_{x\to3}&\left(\frac{x^2-2x-3}{4x-12}\right)\\
+&\lim_{x\to3}&\left(\frac{\left(x^2-2x-3\right)'}{\left(4x-12\right)'}\right)\\
+&\lim_{x\to3}&\left(\frac{2x-2}{4}\right) = 1
+\end{eqnarray}
+\end{enumerate}
 
 % Indeterminación 2
 \section{Indeterminación $\displaystyle \frac{\infty}{\infty}$}
@@ -63,18 +95,47 @@ Para este tipo de indeterminación se puede dividir por polinomio del mayor grad
 Ejemplos:
 
 \vspace{0.5cm}
-a) Factorización
-
-b) L'Hopital
+\begin{enumerate}
+    \item Factorización
+    \begin{eqnarray}
+        \lim_{x\to\infty}\left(\frac{x^2-1}{x-2}\right)\\
+        \lim_{x\to\infty}\left(\frac{x\left(x-\frac{1}{x}\right)}{x\left(1-\frac{2}{x}\right)}\right)\\
+        \lim_{x\to\infty}\left(\frac{x-\frac{1}{x}}{1-\frac{2}{x}}\right) = \infty
+    \end{eqnarray}
+    
+    \item L'Hopital
+    \begin{eqnarray}
+        \lim_{x\to\infty} \left(\frac{x^2-1}{x-2}\right)\\
+        \lim_{x\to\infty} \left(\frac{\left(x^2-1\right)'}{\left(x-2\right)'}\right)\\
+        \lim_{x\to\infty}\left(\frac{2x}{1}\right) = \infty
+    \end{eqnarray}
+\end{enumerate}
+\newpage
 
 \section{Indeterminación $\displaystyle 0 \cdot \infty$}
+La mejor forma para evitar la indeterminación $\displaystyle 0 \cdot \infty$ es transformarla en la indeterminación $\displaystyle \frac{\infty}{\infty}$ o $\displaystyle \frac{0}{0}$. Si lo hacemos, ya sabemos cómo proceder. Además, podemos aplicar L'Hôpital en estas indeterminaciones.\\[6pt]
+Supongamos que $f(x)$ tiende a $0$ y $g(x)$ tiende a $\infty$. Entonces, la indeterminación $0 \cdot \infty$ aparece en el producto $f(x) \cdot g(x)$: $$\lim_{x\to\alpha}f(x) \cdot g(x)$$ Como límite de $f(x)$ es $0$, entonces su inverso multiplicativo será $\infty$:
+\setcounter{equation}{0}
+\begin{eqnarray}
+    \lim_{x\to\alpha}f(x) = 0\\
+    \lim_{x\to\alpha}\frac{1}{f(x)} = \infty
+\end{eqnarray}
+Por lo tanto sólo hace falta reescribir el producto como un cociente: $$\lim_{x\to\alpha}\frac{g(x)}{\frac{1}{f(x)}} = \frac{\infty}{\infty}$$
+Analógicamente para $g(x)$: $$\lim_{x\to\alpha}\frac{f(x)}{\frac{1}{g(x)}} = \frac{0}{0}$$
 
-
+% Indeterminación 4
 \section{Indeterminación $\displaystyle \infty - \infty$}
-\section{Indeterminación $\displaystyle 0^0$}
-\section{Indetermianacióm $\displaystyle \infty^0$}
-\section{Indeterminación $\displaystyle 1^\infty$} 
+Para este tipo de indeterminaciones se puede comparar grados de infinitos en los polinomios y ver si tiende a $+\infty$ o $-\infty$, o en caso de presentar raíces, multiplicar y dividir por el conjugado.
 
+%indeterminación 
+\section{Indeterminación $\displaystyle 0^0$}
+Utilización de propiedades de logaritmo.
+
+\section{Indeterminación $\displaystyle \infty^0$}
+Utilización de propiedades de logaritmo.
+
+\section{Indeterminación $\displaystyle 1^\infty$} 
+Transformar la expresión hasta llegar a la identidad $\displaystyle \lim_{algo\to\infty}\left(1+\frac{1}{algo}\right)^{algo}$
 
 
 \end{document}
