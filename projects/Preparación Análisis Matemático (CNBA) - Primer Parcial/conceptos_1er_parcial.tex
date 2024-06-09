@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[spanish]{babel}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Notas - propiedades y teoremas},
+    pdfpagemode=FullScreen,
+}
+\usepackage{fullpage}
+\usepackage{pgfplots}
+\usepackage{float}
+\pgfplotsset{compat=1.18}
+
+%---------------------
+\title{Propiedades y Teoremas - Primer parcial}
+\author{Ian Chen}
+\date{June 2024}
+
+%--------------------
+\begin{document}
+
+\selectlanguage{spanish}
+% \maketitle
+
+\section{Sucesiones}
+\subsection{Subsucesiones}
+Una subsucesión de una sucesión $\displaystyle a_n$ es una sucesión que está dentro de la sucesión $a_n$.
+Una subsucesión por ejemplo nos brinda información acerca de la sucesión la cual pertenece. 
+
+Por ejemplo la sucesión de números pares $a_n = \{2n ,\, n \in \mathbb{N} \} = \{2, 4, 6, 8, 10 \dots \}$ podría tener de subsucesión $a_{n_k} = \{2^k, k \in \mathbb{N}\} = \{2, 4, 8, 16\dots \}$ que contenga las potencias de 2, ya que las potencias de 2 también son números pares.
+
+Algunas propiedades importantes de subsucesiones son:
+\begin{itemize}
+    \item[-] Si $a_n$ converge a $L \neq \infty$, entonces todas las subsucesiones también convergen a $L$
+    \item[-] Si $a_n$ es una sucesión acotada, entonces todas las subsucesiones también son acotadas
+    \item[-] Si las subsucesiones tienden a límites distintos, entonces la sucesión $a_n$ no converge (osea que no está acotado $\displaystyle \lim \limits_{x \to \infty}a_n=\infty$)
+\end{itemize}
+Información extraída de la siguiente \href{https://www.matesfacil.com/BAC/progresiones/subsucesion-sucesion-parcial-convergente-propiedades-ejemplos-limites-problemas-resueltos.html}{página}.
+
+\vspace{0.5cm}
+%-----------------------
+\subsection{Factoriales}
+Ecuaciones importantes de factoriales:
+\begin{itemize}
+    \item[-] Se define $0\,! = 1$
+    \item[-] Ecuaciones importantes dadas por despeje 
+    \begin{align*}
+        n\,! &= 1 \cdot 2 \cdot 3 \dots n \\[6pt]
+        n\,! \cdot (n+1) &= (n+1)\,! \\[6pt]
+        \frac{(n+1)\,!}{(n+1)} &= n\,! \\[6pt]
+        \frac{(n+1)\,!}{n\,!} &= n+1
+    \end{align*}
+\end{itemize}
+
+
+%-----------------------
+\subsection{Criterio de D'Alambert y Cauchy}
+Los dos criterios sirven para averiguar si la sucesión tiende a $0$ o a infinito.
+D'Alambert (criterio del cociente) dice que si $a_n \neq 0$, entonces $\lim \limits_{n \to \infty} \dfrac{a_{n+1}}{a_n} = L$, mientras que Cauchy (criterio de raiz enésima) dice que $\displaystyle \lim \limits_{n \to \infty} \sqrt[n]{a_n} = L$.
+
+Luego, 
+\[
+\lim \limits_{x \to \infty} a_n \left\{
+\begin{array}{lcr}
+    \infty & si & \,L>1 \\
+     0 & si & \,0 \leq L \leq 1 \\
+     indet & si & \,L=1
+\end{array}
+\right.
+\]
+
+
+\newpage
+%--------------------
+\section{Límites}
+\subsection{Propiedades importantes}
+\begin{align*}
+    \lim \limits_{x \to 0} \frac{\sin x}{x} = 1 \\
+    \lim \limits_{n \to \infty} \left(1+\frac{1}{n} \right)^n = e\\
+    \lim \limits_{x \to 0} \frac{\ln (1+x)}{x} = 1 
+\end{align*}
+
+
+\subsection{Asíntotas oblicuas}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}
+        \addplot[color=red, samples=100, domain=-10:10]{x^3 / (x^2-9)};
+        \addplot[color=blue, samples=100, domain=-10:10]{x};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico feo de $f(x)=\dfrac{x^3}{x^2-9}$ (rojo) con su asíntota oblicua $y=x$ (azul)}
+    \label{fig:graph-1}
+\end{figure}
+
+A partir de la observación del gráfico podemos notar que tendiendo al infinito la función se acerca cada vez más a la asíntota oblicua, por lo cual $\displaystyle \lim \limits_{x \to \infty} \left[f(x)-y \right]=0$. 
+A partir de esta ecuación se puede ir deduciendo los componentes de la asíntota oblicua:
+
+\begin{align}
+\lim \limits_{x \to \infty} \left[f(x)-y \right] &= 0 \\
+\lim \limits_{x \to \infty} \left[f(x)- (mx+b)\right] &= 0 \\
+\lim \limits_{x \to \infty} \left[f(x)-mx -b \right] &= 0 \\
+\lim \limits_{x \to \infty} \left[f(x)-mx \right] - \lim \limits_{x \to \infty} b &= 0 \\
+\lim \limits_{x \to \infty} \left[f(x)-mx \right] &= b \\
+\lim \limits_{x \to \infty} x\left(\dfrac{f(x)}{x} - m\right)  &= b \\
+\lim \limits_{x \to \infty} \left(\dfrac{f(x)}{x} - m\right)  &= 0 \\
+\lim \limits_{x \to \infty} \dfrac{f(x)}{x}  &= m
+\end{align}
+
+Es necesario que la Ecuación 7 sea 0 ya que se produciría una indeterminación y por lo tanto se puede salvarla. En cambio si no es equivalente a 0, no habría una indeterminación y por lo tanto no habría una asíntota oblicua.
+
+Resumiendo:
+\begin{align*}
+    \lim \limits_{x \to \infty} f(x)-mx &= b \\
+    \lim \limits_{x \to \infty} \dfrac{f(x)}{x}  &= m
+\end{align*}
+
+\vspace{0.5cm}
+%--------------------
+\section{Derivadas}
+\subsection{Cociente incremental}
+Fórmula general
+$$\lim \limits_{h \to 0} \dfrac{f(x+h)-f(x)}{h}$$
+Derivada en un punto $a$
+$$\lim \limits_{h \to 0} \dfrac{f(a+h)-f(a)}{h}$$
+$$\lim \limits_{x \to a} \dfrac{f(x)-f(a)}{x-a}$$
+\subsection{Derivada de la función inversa}
+$$(f^{-1})'(x)=\dfrac{1}{f'(f^{-1}(x))}$$
+
+\end{document}
